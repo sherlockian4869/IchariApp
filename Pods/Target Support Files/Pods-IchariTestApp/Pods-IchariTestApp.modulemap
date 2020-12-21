@@ -1,0 +1,6 @@
+framework module Pods_IchariTestApp {
+  umbrella header "Pods-IchariTestApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

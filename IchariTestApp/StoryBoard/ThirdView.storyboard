@@ -1,7 +1,74 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Third View Controller-->
+        <scene sceneID="IHV-Hm-3VM">
+            <objects>
+                <viewController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bdh-Yp-BMD" customClass="ThirdViewController" customModule="IchariTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yBl-f0-rSu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日の運勢 調べるさ〜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neN-tc-3Yi">
+                                <rect key="frame" x="106.5" y="204" width="201.5" height="95.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sP8-73-ZBy">
+                                <rect key="frame" x="100" y="670" width="214" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="占う">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="FortuneBtnTapped:" destination="Bdh-Yp-BMD" eventType="touchUpInside" id="DZp-C9-RsA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sP8-73-ZBy" firstAttribute="centerX" secondItem="yBl-f0-rSu" secondAttribute="centerX" id="0St-w7-GHQ"/>
+                            <constraint firstItem="neN-tc-3Yi" firstAttribute="top" secondItem="F4x-Z4-0aE" secondAttribute="top" constant="160" id="DQd-Bd-sLn"/>
+                            <constraint firstItem="F4x-Z4-0aE" firstAttribute="trailing" secondItem="sP8-73-ZBy" secondAttribute="trailing" constant="100" id="Gu0-CV-wlh"/>
+                            <constraint firstItem="neN-tc-3Yi" firstAttribute="centerX" secondItem="yBl-f0-rSu" secondAttribute="centerX" id="NAr-Cn-ceQ"/>
+                            <constraint firstItem="sP8-73-ZBy" firstAttribute="leading" secondItem="F4x-Z4-0aE" secondAttribute="leading" constant="100" id="PXB-0W-Ai4"/>
+                            <constraint firstItem="F4x-Z4-0aE" firstAttribute="bottom" secondItem="sP8-73-ZBy" secondAttribute="bottom" constant="150" id="fN1-Gn-7DW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F4x-Z4-0aE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QiK-KE-iVP"/>
+                    <connections>
+                        <outlet property="FortuneButton" destination="sP8-73-ZBy" id="Pcm-XR-cFR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdx-9q-oxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197.1014492753625" y="129.91071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ta3-4L-dSK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="aCY-aJ-cxW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dHT-Ie-POE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bdh-Yp-BMD" kind="relationship" relationship="rootViewController" id="LpZ-Cx-9f4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHB-eZ-XPU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286.95652173913044" y="129.91071428571428"/>
+        </scene>
+    </scenes>
 </document>

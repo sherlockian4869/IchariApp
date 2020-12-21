@@ -1,30 +1,29 @@
-//
-//  ThirdViewController.swift
-//  IchariTestApp
-//
-//  Created by Kohei Yaeo on 2020/12/19.
-//  Copyright © 2020 sherlockian. All rights reserved.
-//
-
 import UIKit
 
 class ThirdViewController: UIViewController {
 
+    var thirdUser: String?
+    var thirdNumber: Int?
+    
+    @IBOutlet weak var FortuneButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        thirdNumber = Int.random(in: 1 ... 6)
+        FortuneButton.layer.cornerRadius = 10
+        print("randomNumber:", thirdNumber!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func FortuneBtnTapped(_ sender: Any) {
+        transitionForthView()
     }
-    */
-
+    
+    private func transitionForthView() {
+        let thirdStoryboard = UIStoryboard(name: "ForthView", bundle: nil)
+        let forthViewController = thirdStoryboard.instantiateViewController(withIdentifier: "ForthViewController") as? ForthViewController
+        forthViewController!.modalPresentationStyle = .fullScreen
+        forthViewController!.forthNumber = thirdNumber
+        forthViewController!.forthUser = thirdUser
+        self.present(forthViewController!, animated: true, completion: nil)
+    }
 }

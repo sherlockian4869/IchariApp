@@ -1,30 +1,20 @@
-//
-//  SixthViewController.swift
-//  IchariTestApp
-//
-//  Created by Kohei Yaeo on 2020/12/19.
-//  Copyright © 2020 sherlockian. All rights reserved.
-//
-
 import UIKit
 
 class SixthViewController: UIViewController {
 
+    @IBOutlet weak var topButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    @IBAction func topBtnTapped(_ sender: Any) {
+        transitionTopView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func transitionTopView() {
+        let sixthStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let firstViewController = sixthStoryboard.instantiateViewController(withIdentifier: "FirstViewController")
+        firstViewController.modalPresentationStyle = .fullScreen
+        self.present(firstViewController, animated: true, completion: nil)
     }
-    */
-
 }
