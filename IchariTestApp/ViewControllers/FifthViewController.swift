@@ -138,10 +138,8 @@ extension FifthViewController: ChatInputAccessoryViewDelegate {
                 return
             }
             
-            let dialog = UIAlertController(title: "Have a nice day!!", message: "占い画面に戻りますか？", preferredStyle: .actionSheet)
-            
-            dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
+            let dialog = UIAlertController(title: "Have a nice day!!", message: "占い画面に戻りますか？", preferredStyle: .alert)
+                        
             self.present(dialog, animated: true, completion: nil)
             dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 let fifthStroyboard = UIStoryboard(name: "SixthView", bundle: nil)
